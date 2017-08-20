@@ -1,0 +1,43 @@
+0.  Its a lung disease caused by inhalation of silica dust.
+1.  getrusage() returns the resource usage data for a calling process or its 
+    children.
+2.  There are 16 members in a variable of type struct rusage.
+3.  The defintion of getrusage() specifies that the second argument is to be a 
+    pointer to a variable of type struct rusage. In other words, it wants the
+    memory address of the variable that is required by getrusage() and hence 
+    the arguments are passed by reference. 
+4.  main() does not read words from the file. Instead, it reads the file
+    character by character and identifies legal words (if a character is a 
+    digit or any other symbol except the apostrophe, it skips the entire word).
+    It stores the characters in an array. It keeps track of length of word  and 
+    the insertion position by updating a counter each time a character is read. 
+    When it finds a legal word, it ends the word by adding the null character at
+    the end of the array and reinitialises the counter.
+5.  fscanf() cannot differentiate between strings that are legal words or not.
+    It would just scan characters until the maximum length of a word was
+    exceeded or it encountered a white space. Additional code would then be 
+    required for filtering.
+6.  The parameters were declared as constants to prevent any accidental 
+    alterations.
+7.  I used a data structure which looks like a trie. The basic element is: 
+    struct node
+    {
+        char ch;
+        struct node* ptr;
+    }
+    The root level of this trie is an array of 27 such nodes and all other 
+    children are also arrays of 27 nodes. 
+    Its structure is as follows:  
+    The rootlevel nodes hold characters A to Z and the apostrophe. Now A is  
+    linked to an array that contains all possible characters that might occur in  
+    the second place in words starting with A. A node of this array lets say C  
+    is linked to an array of nodes having all possible characters that occur in 
+    third place after AC in all possible words and so on.   
+8.  The first time I got it working correctly, it took twice the time as 
+    compared to the staff solution.
+9.  I replaced common function calls - tolower(), toupper(), isalpha() with 
+    arithmetic operations and also restructured my data structure to reduce 
+    number of calculations required for traversal.
+10. The load() and check() functions are still a bit slower than the staff's,
+    but I could not find any simplications that I could further make
+    to speed up my code. 

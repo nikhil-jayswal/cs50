@@ -1,0 +1,37 @@
+0.  The JPEG file format supports over 16 million colors. A GIF is restricted to 256 colors.
+    The PNG file format with 24 bit color can support over 16 million colors
+    but can also support transparency in images. A BMP can also support as many colors as a 
+    BMP as JPEG if using  24 bits to specify pixel color.
+1.  The GIF file format supports animation.
+2.  A lossy-compression means that a part of data is lost during 
+    the compression process and cannot be recovered and the decompression
+    process will not reproduce the exact image that was compressed and 
+    thus image quality is affected. This loss of data does ot occur in 
+    lossless compression.
+3.  The JPEG format is lossy-compressed.
+4.  When a file is deleted on a FAT file system, the operating system modifies 
+    the filename to indicate that the file has been deleted and it moves all of 
+    the file’s FAT clusters to the hard drive’s list of free clusters.
+5.  To ensure that deleted files cannot be recovered, freely available tools can be
+    used to sanitize the hard disk or the data on the hard disk can be encrypted. 
+6.  stdint.h is a header file that defines various integer data types of different
+    width - number of bits used to store the value of the integer.
+7.  It hepls make the program more portable.
+8.  A BYTE has a size of 1 byte, a DWORD and LONG take up 4 bytes and a 
+    WORD has a size of 2 bytes.
+9.  The first two bytes of a BMP file represent the file type and they must be BM. 
+10. bfize is the size of the BMP file whereas biSize is the size of the structure
+    BIMAPINFOHEADER. 
+11. If biHeight is negative, it means that the origin of the file lies at the upper 
+    left hand corner.
+12. biBitCount tells us the number of bits per pixel.
+13. fopen might return NULL if there is no legal memory allocated to the pointer outfile.
+14. The third argument of fread is the number of elements to be read by it, which in our case is 1
+    since a BMP file has a single BITMAPINFOHEADER and a single BITMAPFILEHEADER.
+15. The value assigned to padding is 3, assuming the size of RGBTRIPLE is 3 bytes.
+16. fseek sets the file pointer in a file to a position which is calculated by adding the
+    provided offset to SEEK_CUR (current position) or to SEEK_SET (beginning of file) or
+    SEEK_END (end of file).
+17. SEEK_CUR tells us the current position of file pointer in the file that's reading data
+    from the file.
+18. Rob Bowden dun it.
